@@ -1,0 +1,965 @@
+---
+
+type Entry = {
+  word: string;
+  pos: string;
+  pron: string;
+  def: string;
+  roots?: string;
+  seeAlso?: string[];
+};
+
+const entries: Entry[] = [
+  {
+    word: "absurditation",
+    pos: "noun",
+    pron: "əb-sur-dih-TAY-shun",
+    roots: "absurd + -ation",
+    def: "A family of paradoxical emotions arising from the realization that your work is meaningless or impossible.",
+    seeAlso: ["chrono-absurditation", "strato-absurditation"],
+  },
+  {
+    word: "autoridiculism",
+    pos: "noun",
+    pron: "aw-toh-rih-DIK-yuh-liz-um",
+    roots: "auto- + ridicule",
+    def: "The moment you think “what idiot wrote this code?” — only to discover it was you.",
+    seeAlso: ["scribnesia"],
+  },
+  {
+    word: "chrono-absurditation",
+    pos: "noun",
+    pron: "KROH-noh-əb-sur-dih-TAY-shun",
+    roots: "chrono- + absurditation",
+    def: "A strain of absurditation brought on by an imposed, impossible timeline.",
+    seeAlso: ["absurditation", "strato-absurditation"],
+  },
+  {
+    word: "coderaderie",
+    pos: "noun",
+    pron: "koh-də-RAH-də-ree",
+    roots: "code + camaraderie",
+    def: "The bond formed between like-minded developers working in the same codebase.",
+    seeAlso: ["codemiseration"],
+  },
+  {
+    word: "codemiseration",
+    pos: "noun",
+    pron: "kohd-miz-uh-RAY-shun",
+    roots: "code + commiseration",
+    def: "The trauma bond that forms between developers surviving a nightmare codebase together.",
+    seeAlso: ["coderaderie", "fixifragilation"],
+  },
+  {
+    word: "deja-view",
+    pos: "noun",
+    pron: "DAY-zhah-VYOO",
+    roots: "déjà vu + view",
+    def: "The realization that the brand-new component you just wrote already exists elsewhere in the codebase.",
+    seeAlso: ["nymesia", "scribnesia"],
+  },
+  {
+    word: "euflowria",
+    pos: "noun",
+    pron: "yoo-FLOR-ee-uh",
+    roots: "euphoria + flow",
+    def: "The clarity and elation of being deep in flow, producing high-quality code rapidly and effortlessly.",
+    seeAlso: ["lockinosis", "initilation"],
+  },
+  {
+    word: "errorigma",
+    pos: "noun",
+    pron: "eh-rə-RIG-muh",
+    roots: "error + enigma",
+    def: "The confusion when an error message points to a line number that is empty or otherwise useless.",
+    seeAlso: ["undocumentosis"],
+  },
+  {
+    word: "fixifragilation",
+    pos: "noun",
+    pron: "fik-sih-fraj-ih-LAY-shun",
+    roots: "fix + fragile + -ation",
+    def: "The helplessness of working in a codebase so fragile that fixing one bug spawns three more.",
+    seeAlso: ["codemiseration", "verbotrocity", "inheirritation"],
+  },
+  {
+    word: "hubrifactor",
+    pos: "noun",
+    pron: "HYOO-brih-FAK-tər",
+    roots: "hubris + refactor",
+    def: "The uneasy realization, mid-refactor of “dumb code,” that it wasn't dumb at all — and now you're in over your head.",
+    seeAlso: ["ineptifactor", "impostifactor"],
+  },
+  {
+    word: "impostifactor",
+    pos: "noun",
+    pron: "im-POS-tih-FAK-tər",
+    roots: "impostor + factor",
+    def: "The dread of making architectural decisions you aren't qualified to make, because time or budget won't let you reach the real expert.",
+    seeAlso: ["hubrifactor"],
+  },
+  {
+    word: "inheirritation",
+    pos: "noun",
+    pron: "in-hair-ih-TAY-shun",
+    roots: "inherit + irritation",
+    def: "The respectful frustration of taking over someone's code, knowing it was written under the same crunch you're in now.",
+    seeAlso: ["fixifragilation"],
+  },
+  {
+    word: "ineptifactor",
+    pos: "noun",
+    pron: "in-EP-tih-FAK-tər",
+    roots: "inept + factor",
+    def: "The urge to refactor code that already works fine, simply because it feels too complex for you to fully grasp.",
+    seeAlso: ["hubrifactor", "verbotrocity"],
+  },
+  {
+    word: "initilation",
+    pos: "noun",
+    pron: "ih-nish-ee-ay-LAY-shun",
+    roots: "initial + elation",
+    def: "The rush of joy when code works on the first try — and you're sure it's because you did everything right.",
+    seeAlso: ["initianoia", "euflowria"],
+  },
+  {
+    word: "initianoia",
+    pos: "noun",
+    pron: "ih-nish-ee-uh-NOY-uh",
+    roots: "initial + paranoia",
+    def: "The unnerving skepticism when code works on the first try, making you suspect something is lurking beneath the surface.",
+    seeAlso: ["initilation"],
+  },
+  {
+    word: "lockinosis",
+    pos: "noun",
+    pron: "lok-in-OH-sis",
+    roots: "lock in + -osis",
+    def: "The state of trying to “lock in” and focus, only to be thwarted by exhaustion or burnout.",
+    seeAlso: ["euflowria", "popinlockinosis"],
+  },
+  {
+    word: "nymesia",
+    pos: "noun",
+    pron: "nahy-MEE-zhuh",
+    roots: "-onym + amnesia",
+    def: "The nagging certainty that the file, method, or variable you need already exists — if only you could recall its name.",
+    seeAlso: ["nymolysis", "deja-view"],
+  },
+  {
+    word: "nymolysis",
+    pos: "noun",
+    pron: "nahy-MOL-ih-sis",
+    roots: "-onym + -lysis",
+    def: "The paralysis of being unable to decide what to name a file, method, or variable.",
+    seeAlso: ["nymesia"],
+  },
+  {
+    word: "popinlockinosis",
+    pos: "noun",
+    pron: "POP-in-LOK-in-OH-sis",
+    roots: "pop-and-lock + lockinosis",
+    def: "The point at which lockinosis becomes so severe that the entire dev team breaks down.",
+    seeAlso: ["lockinosis"],
+  },
+  {
+    word: "pyrrhicompilation",
+    pos: "noun",
+    pron: "PIR-ih-kom-pih-LAY-shun",
+    roots: "Pyrrhic + compilation",
+    def: "The hollow relief of a build finally compiling, after which you feel too worn down by repeated failures to truly celebrate.",
+    seeAlso: ["sisatation"],
+  },
+  {
+    word: "scribnesia",
+    pos: "noun",
+    pron: "skrib-NEE-zhuh",
+    roots: "scribe + amnesia",
+    def: "The eerie experience of reading your own code with no recollection of having written it.",
+    seeAlso: ["autoridiculism", "deja-view"],
+  },
+  {
+    word: "sisatation",
+    pos: "noun",
+    pron: "sis-uh-TAY-shun",
+    roots: "Sisyphus + -ation",
+    def: "The mounting tension and anticipation built up across repeated attempts to get a build to succeed.",
+    seeAlso: ["pyrrhicompilation"],
+  },
+  {
+    word: "strato-absurditation",
+    pos: "noun",
+    pron: "STRAT-oh-əb-sur-dih-TAY-shun",
+    roots: "strato- + absurditation",
+    def: "A strain of absurditation caused by a stark lack of team resources.",
+    seeAlso: ["absurditation", "chrono-absurditation"],
+  },
+  {
+    word: "undocumentosis",
+    pos: "noun",
+    pron: "un-dok-yoo-men-TOH-sis",
+    roots: "undocumented + -osis",
+    def: "The unease of venturing into the undocumented parts of a library or framework.",
+    seeAlso: ["errorigma"],
+  },
+  {
+    word: "verbotrocity",
+    pos: "noun",
+    pron: "ver-BOT-rə-sih-tee",
+    roots: "verbose + atrocity",
+    def: "The condition of code growing ever more verbose and overengineered, yet too entangled to simplify without risking a break.",
+    seeAlso: ["fixifragilation", "ineptifactor"],
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>emotions.dev — a lexicon for emotions unique to developers</title>
+    <meta
+      name="description"
+      content="A small lexicon of coined words for the emotions unique to developers — because part of developer burnout is having no language for what we go through."
+    />
+    <meta property="og:title" content="emotions.dev" />
+    <meta
+      property="og:description"
+      content="Words for the emotions unique to developers."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://emotions.dev" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="hero">
+      <div class="hero__concrete" aria-hidden="true">
+        <span class="crack"></span>
+        <span class="bloom bloom--1">✿</span>
+      </div>
+      <div class="hero__inner">
+        <h1 class="kicker">emotions<span class="dot">.</span>dev</h1>
+        <p class="lede">
+          Developer burnout is highly prevalent, with up to 80% of programmers reporting feelings of exhaustion and cynicism. While developers enjoy higher salaries and better flexibility than many jobs, the cognitive intensity, constant need to upskill, and unclear project requirements make them particularly vulnerable compared to less technically demanding or non-digital professions.<br><br>
+					We believe part of the problem is that developers have no language for what they go through, so we created this lexicon of coined words for the emotions unique to developers — to help us name, share, and ultimately better understand our experiences.
+					<br><br>Take what you need.
+				</p>
+      </div>
+    </header>
+
+    <main>
+      <ol class="lexicon" id="lexicon">
+        {
+          entries.map((e) => (
+            <li
+              class="entry"
+              id={e.word}
+              data-text={`${e.word} ${e.def} ${e.roots ?? ""}`.toLowerCase()}
+            >
+              <article>
+                <header class="entry__head">
+                  <h2 class="entry__word">{e.word}</h2>
+                  <span class="bloom-mark" aria-hidden="true">
+                    ❀
+                  </span>
+                </header>
+                <p class="entry__meta">
+                  <span class="pos">{e.pos}</span>
+                  <span class="sep">|</span>
+                  <span class="pron">/{e.pron}/</span>
+                </p>
+                <p class="entry__def">{e.def}</p>
+                {e.roots && <p class="entry__roots">{e.roots}</p>}
+                {e.seeAlso && e.seeAlso.length > 0 && (
+                  <p class="entry__seealso">
+                    <span class="entry__seealso-label">see also</span>
+                    {e.seeAlso.map((rel) => (
+											<div>
+												<a class="seealso-link" href={`#${rel}`} data-rel={rel}>
+													{rel}
+												</a>
+											</div>
+                    ))}
+                  </p>
+                )}
+              </article>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="noresults" id="noresults" hidden>
+        Nothing blooms here yet — try another word.
+      </p>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__lead">
+        Felt something we missed? The lexicon grows by being shared.
+      </p>
+      <p class="footer__cta-text">
+        Coin a word for it and open a pull request — every feeling deserves a
+        name.
+      </p>
+      <a
+        class="footer__cta"
+        href="https://github.com/foldsters/emotions-dev"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg
+          class="footer__cta-icon"
+          viewBox="0 0 16 16"
+          width="18"
+          height="18"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+          ></path>
+        </svg>
+        Contribute on GitHub
+      </a>
+      <p class="footer__meta">
+        emotions.dev — made for developers, by developers who've been there.
+        Pronunciations show the stressed syllable in <span class="caps"
+          >CAPS</span
+        >.
+      </p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script is:inline>
+      (function () {
+        // The search box is optional — guard against it being absent so the
+        // rest of the script (card clicks, "see also") always runs.
+        const input = document.getElementById("filter");
+        const items = Array.from(document.querySelectorAll(".entry"));
+        const noresults = document.getElementById("noresults");
+
+        function update() {
+          if (!input) return;
+          const q = input.value.trim().toLowerCase();
+          let shown = 0;
+          for (const el of items) {
+            const match = !q || el.dataset.text.includes(q);
+            el.hidden = !match;
+            if (match) shown++;
+          }
+          if (noresults) noresults.hidden = shown !== 0;
+        }
+
+        if (input) {
+          input.addEventListener("input", update);
+          update();
+        }
+
+        const toast = document.getElementById("toast");
+        let toastTimer = null;
+        function showToast(msg) {
+          if (!toast) return;
+          toast.textContent = msg;
+          toast.classList.add("is-shown");
+          if (toastTimer) clearTimeout(toastTimer);
+          toastTimer = setTimeout(function () {
+            toast.classList.remove("is-shown");
+          }, 1900);
+        }
+
+        // Copy text to clipboard, with a fallback for non-secure contexts.
+        function copyText(text) {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            return navigator.clipboard.writeText(text);
+          }
+          return new Promise(function (resolve, reject) {
+            try {
+              const ta = document.createElement("textarea");
+              ta.value = text;
+              ta.setAttribute("readonly", "");
+              ta.style.position = "fixed";
+              ta.style.opacity = "0";
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand("copy");
+              document.body.removeChild(ta);
+              resolve();
+            } catch (e) {
+              reject(e);
+            }
+          });
+        }
+
+        // Marks a card active and flashes it (purely visual — never throws).
+        let active = null;
+        function selectCard(el) {
+          if (active) active.classList.remove("is-active");
+          active = el;
+          el.classList.add("is-active");
+          el.classList.remove("is-flash");
+          void el.offsetWidth; // restart the animation
+          el.classList.add("is-flash");
+        }
+
+        function setHash(id) {
+          // replaceState throws on file:// in some browsers — never let that
+          // abort the click handler.
+          try {
+            history.replaceState(null, "", "#" + id);
+          } catch (e) {
+            try {
+              location.hash = id;
+            } catch (e2) {
+              /* give up silently */
+            }
+          }
+        }
+
+        // One delegated handler on the document covers both "see also" links
+        // and card clicks, so nothing depends on a single element resolving.
+        document.addEventListener("click", function (ev) {
+          // 1) "see also" links navigate to their target.
+          const link = ev.target.closest(".seealso-link");
+          if (link) {
+            ev.preventDefault();
+            const id = link.getAttribute("data-rel");
+            const target = document.getElementById(id);
+            if (!target) return;
+            if (input && input.value) {
+              input.value = "";
+              update();
+            }
+            target.scrollIntoView({ behavior: "smooth", block: "center" });
+            selectCard(target);
+            setHash(id);
+            return;
+          }
+
+          // 2) Clicking anywhere else on a card copies its permalink.
+          const card = ev.target.closest(".entry");
+          if (!card) return;
+          // Don't hijack an active text selection.
+          const sel = window.getSelection();
+          if (sel && sel.toString().length) return;
+
+          selectCard(card);
+          setHash(card.id);
+          const url = location.origin + location.pathname + "#" + card.id;
+          copyText(url).then(
+            function () {
+              showToast("Link to “" + card.id + "” copied ✿");
+            },
+            function () {
+              showToast("Couldn’t copy — copy it from the address bar");
+            }
+          );
+        });
+
+        // On load, mark the card named in the URL hash as active.
+        if (location.hash.length > 1) {
+          const initial = document.getElementById(
+            decodeURIComponent(location.hash.slice(1))
+          );
+          if (initial) {
+            active = initial;
+            initial.classList.add("is-active");
+          }
+        }
+      })();
+    </script>
+
+    <style>
+      :root {
+        --concrete: #c7c4bd;
+        --concrete-dark: #2c2b29;
+        --concrete-mid: #6f6c66;
+        --ink: #1b1a18;
+        --paper: #e9e6df;
+        --bloom: #e0719a;
+        --bloom-deep: #b23e6c;
+        --leaf: #5e7d52;
+        --gold: #d9a441;
+        --line: rgba(27, 26, 24, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(
+            1200px 600px at 80% -10%,
+            rgba(224, 113, 154, 0.12),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at -10% 30%,
+            rgba(94, 125, 82, 0.1),
+            transparent 55%
+          ),
+          var(--paper);
+        color: var(--ink);
+        font-family: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* concrete grain overlay */
+      .grain {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.5;
+        mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+      }
+
+      /* ---------- hero / brutalist slab ---------- */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          180deg,
+          var(--concrete-dark),
+          #3a3936 60%,
+          #45433f
+        );
+        color: var(--concrete);
+        border-bottom: 6px solid var(--ink);
+      }
+
+      .hero__concrete {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 46px 46px;
+        opacity: 0.7;
+      }
+
+      .crack {
+        position: absolute;
+        top: -5%;
+        left: 24%;
+        width: 2px;
+        height: 110%;
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(0, 0, 0, 0.5) 30%,
+          rgba(0, 0, 0, 0.35) 70%,
+          transparent
+        );
+        transform: rotate(8deg);
+        box-shadow: 90px 0 0 -1px rgba(0, 0, 0, 0.22);
+      }
+
+      .bloom {
+        position: absolute;
+        font-size: clamp(2rem, 6vw, 4rem);
+        color: var(--bloom);
+        text-shadow: 0 2px 0 var(--bloom-deep);
+        opacity: 0.9;
+        animation: sway 7s ease-in-out infinite;
+      }
+      .bloom--1 {
+        top: 14%;
+        right: 9%;
+      }
+
+      @keyframes sway {
+        0%,
+        100% {
+          transform: rotate(-6deg) translateY(0);
+        }
+        50% {
+          transform: rotate(6deg) translateY(-6px);
+        }
+      }
+
+      .hero__inner {
+        position: relative;
+        z-index: 2;
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: clamp(3.5rem, 9vw, 7rem) clamp(1.25rem, 5vw, 3rem)
+          clamp(3rem, 7vw, 5rem);
+      }
+
+      .kicker {
+        margin: 0 0 1.6rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        font-size: 2.0rem;
+        color: var(--concrete);
+      }
+      .kicker .dot {
+        color: var(--bloom);
+      }
+
+      h1 {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 600;
+        font-size: clamp(2.4rem, 7vw, 5rem);
+        line-height: 1.02;
+        letter-spacing: -0.015em;
+        margin: 0 0 1.4rem;
+        color: var(--paper);
+      }
+      h1 em {
+        font-style: italic;
+        color: var(--bloom);
+      }
+
+      .lede {
+        max-width: 56ch;
+        margin: 4.2rem 0 2.2rem;
+        color: rgba(233, 230, 223, 0.82);
+        font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+      }
+
+      /* ---------- lexicon ---------- */
+      main {
+        position: relative;
+        z-index: 2;
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 3rem)
+          clamp(3rem, 7vw, 5rem);
+      }
+
+      .lexicon {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 640px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        counter-reset: idx;
+      }
+
+      .entry {
+        counter-increment: idx;
+        scroll-margin-top: 1.5rem;
+      }
+
+      .entry article {
+        position: relative;
+        height: 100%;
+        background: linear-gradient(180deg, #fbfaf6, var(--concrete));
+        border: 1px solid var(--line);
+        border-top: 5px solid var(--concrete-dark);
+        padding: 1.5rem 1.4rem 2.3rem;
+        overflow: hidden;
+        cursor: pointer;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          border-top-color 0.18s ease;
+      }
+      .entry article::before {
+        content: counter(idx, decimal-leading-zero);
+        position: absolute;
+        top: 0.7rem;
+        right: 0.9rem;
+        font-size: 0.72rem;
+        color: var(--concrete-mid);
+        letter-spacing: 0.1em;
+      }
+      .entry article:hover {
+        transform: translateY(-4px);
+        box-shadow: 8px 10px 0 -2px rgba(27, 26, 24, 0.16);
+        border-top-color: var(--bloom-deep);
+      }
+      .entry article:hover .bloom-mark {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+
+      /* the card currently named in the URL (clicked / linked to) */
+      .entry.is-active article {
+        border-top-color: var(--bloom-deep);
+      }
+      .entry.is-active .bloom-mark {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+
+      /* "click to copy link" affordance at the bottom of the card */
+      .entry article::after {
+        content: "✿ copy link";
+        position: absolute;
+        bottom: 0.85rem;
+        right: 1.4rem;
+        font-size: 0.66rem;
+        letter-spacing: 0.06em;
+        color: var(--bloom-deep);
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.18s ease;
+        pointer-events: none;
+      }
+      .entry article:hover::after,
+      .entry.is-active article::after {
+        opacity: 0.85;
+      }
+
+      .entry__head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin: 0 0 0.5rem;
+      }
+
+      .entry__word {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 600;
+        font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+        line-height: 1.1;
+        margin: 0;
+        color: var(--ink);
+        word-break: break-word;
+      }
+
+      .bloom-mark {
+        flex: none;
+        color: var(--bloom);
+        font-size: 1.1rem;
+        opacity: 0.35;
+        transform: scale(0.7) rotate(-25deg);
+        transition:
+          transform 0.25s ease,
+          opacity 0.25s ease;
+      }
+
+      .entry__meta {
+        margin: 0 0 0.9rem;
+        font-size: 0.78rem;
+        color: var(--concrete-mid);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .entry__meta .pos {
+        font-style: italic;
+      }
+      .entry__meta .sep {
+        opacity: 0.4;
+      }
+      .entry__meta .pron {
+        color: var(--bloom-deep);
+        letter-spacing: 0.02em;
+      }
+
+      .entry__def {
+        margin: 0;
+        font-size: 0.92rem;
+        line-height: 1.62;
+        color: #34322e;
+      }
+
+      .entry__roots {
+        margin: 0.95rem 0 0;
+        padding-top: 0.7rem;
+        border-top: 1px dashed var(--line);
+        font-size: 0.74rem;
+        letter-spacing: 0.04em;
+        color: var(--leaf);
+        font-style: italic;
+      }
+
+      .entry__seealso {
+        margin: 0.85rem 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.4rem 0.5rem;
+        font-size: 0.74rem;
+      }
+      .entry__seealso-label {
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.64rem;
+        color: var(--concrete-mid);
+      }
+      .seealso-link {
+				font-size: small;
+        color: var(--bloom-deep);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(178, 62, 108, 0.35);
+        padding-bottom: 1px;
+        transition:
+          color 0.15s ease,
+          border-color 0.15s ease;
+        word-break: break-word;
+      }
+      .seealso-link::before {
+        content: "❀";
+        color: var(--bloom);
+        font-size: 0.7em;
+        margin-right: 0.25em;
+        opacity: 0.7;
+      }
+      .seealso-link:hover {
+        color: var(--leaf);
+        border-color: var(--leaf);
+      }
+
+      /* brief highlight when navigated to via a "see also" link */
+      .entry.is-flash article {
+        animation: flash 1.6s ease-out;
+      }
+      @keyframes flash {
+        0%,
+        18% {
+          border-top-color: var(--bloom-deep);
+          box-shadow: 0 0 0 3px rgba(224, 113, 154, 0.45);
+        }
+        100% {
+          border-top-color: var(--concrete-dark);
+          box-shadow: 0 0 0 0 rgba(224, 113, 154, 0);
+        }
+      }
+
+      .noresults {
+        text-align: center;
+        color: var(--concrete-mid);
+        font-style: italic;
+        padding: 2rem 0;
+      }
+
+      /* ---------- footer ---------- */
+      .footer {
+        position: relative;
+        z-index: 2;
+        border-top: 6px solid var(--ink);
+        background: var(--concrete-dark);
+        color: var(--concrete);
+        text-align: center;
+        padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+      }
+      .footer__lead {
+        font-family: "Fraunces", Georgia, serif;
+        font-style: italic;
+        font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+        margin: 0 0 0.8rem;
+        color: var(--paper);
+      }
+      .footer__cta-text {
+        font-size: 0.92rem;
+        color: rgba(233, 230, 223, 0.78);
+        margin: 0 auto 1.6rem;
+        max-width: 46ch;
+      }
+      .footer__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: var(--bloom);
+        color: var(--concrete-dark);
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 0.92rem;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+        padding: 0.85rem 1.4rem;
+        border: 2px solid var(--ink);
+        box-shadow: 5px 5px 0 0 var(--ink);
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease,
+          background-color 0.15s ease;
+      }
+      .footer__cta:hover {
+        background: var(--gold);
+        transform: translate(-2px, -2px);
+        box-shadow: 7px 7px 0 0 var(--ink);
+      }
+      .footer__cta:active {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0 0 var(--ink);
+      }
+      .footer__cta:focus-visible {
+        outline: 3px solid var(--paper);
+        outline-offset: 2px;
+      }
+      .footer__cta-icon {
+        flex: none;
+      }
+
+      .footer__meta {
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        color: rgba(233, 230, 223, 0.6);
+        margin: 2.2rem auto 0;
+        max-width: 54ch;
+      }
+      .footer .caps {
+        color: var(--gold);
+        font-weight: 700;
+      }
+
+      /* ---------- copy toast ---------- */
+      .toast {
+        position: fixed;
+        z-index: 10;
+        left: 50%;
+        bottom: 1.5rem;
+        transform: translate(-50%, 1.5rem);
+        background: var(--concrete-dark);
+        color: var(--paper);
+        border: 2px solid var(--ink);
+        border-left: 5px solid var(--bloom);
+        box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.35);
+        padding: 0.75rem 1.1rem;
+        font-size: 0.82rem;
+        letter-spacing: 0.02em;
+        max-width: calc(100vw - 2rem);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+      }
+      .toast.is-shown {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .bloom {
+          animation: none;
+        }
+        .entry.is-flash article {
+          animation: none;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </body>
+</html>
