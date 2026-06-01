@@ -27,3 +27,7 @@ npm run preview  # preview the production build
 Pushing to `main` triggers the GitHub Actions workflow, which builds the site and
 publishes it to GitHub Pages. The `public/CNAME` file keeps the custom domain
 bound on every deploy.
+
+## Contributing
+
+Make a PR and I will review it. Please keep it PG-13.
