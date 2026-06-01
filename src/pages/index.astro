@@ -261,11 +261,7 @@ const entries: Entry[] = [
       <ol class="lexicon" id="lexicon">
         {
           entries.map((e) => (
-            <li
-              class="entry"
-              id={e.word}
-              data-text={`${e.word} ${e.def} ${e.roots ?? ""}`.toLowerCase()}
-            >
+            <li class="entry" id={e.word}>
               <article>
                 <header class="entry__head">
                   <h2 class="entry__word">{e.word}</h2>
@@ -297,9 +293,6 @@ const entries: Entry[] = [
           ))
         }
       </ol>
-      <p class="noresults" id="noresults" hidden>
-        Nothing blooms here yet — try another word.
-      </p>
     </main>
 
     <footer class="footer">
@@ -342,29 +335,6 @@ const entries: Entry[] = [
 
     <script is:inline>
       (function () {
-        // The search box is optional — guard against it being absent so the
-        // rest of the script (card clicks, "see also") always runs.
-        const input = document.getElementById("filter");
-        const items = Array.from(document.querySelectorAll(".entry"));
-        const noresults = document.getElementById("noresults");
-
-        function update() {
-          if (!input) return;
-          const q = input.value.trim().toLowerCase();
-          let shown = 0;
-          for (const el of items) {
-            const match = !q || el.dataset.text.includes(q);
-            el.hidden = !match;
-            if (match) shown++;
-          }
-          if (noresults) noresults.hidden = shown !== 0;
-        }
-
-        if (input) {
-          input.addEventListener("input", update);
-          update();
-        }
-
         const toast = document.getElementById("toast");
         let toastTimer = null;
         function showToast(msg) {
@@ -435,10 +405,6 @@ const entries: Entry[] = [
             const id = link.getAttribute("data-rel");
             const target = document.getElementById(id);
             if (!target) return;
-            if (input && input.value) {
-              input.value = "";
-              update();
-            }
             target.scrollIntoView({ behavior: "smooth", block: "center" });
             selectCard(target);
             setHash(id);
@@ -845,12 +811,6 @@ const entries: Entry[] = [
         }
       }
 
-      .noresults {
-        text-align: center;
-        color: var(--concrete-mid);
-        font-style: italic;
-        padding: 2rem 0;
-      }
 
       /* ---------- footer ---------- */
       .footer {
